@@ -9,11 +9,11 @@ else
 fi
 
 # Change the hostname so we can easily identify what environment we're on:
-echo "nodejs-vagrant" > /etc/hostname
+echo "vagrant" > /etc/hostname
 # Update /etc/hosts to match new hostname to avoid "Unable to resolve hostname" issue:
-echo "127.0.0.1 nodejs-vagrant" >> /etc/hosts
+echo "127.0.0.1 vagrant" >> /etc/hosts
 # Use hostname command so that the new hostname takes effect immediately without a restart:
-hostname nodejs-vagrant
+hostname vagrant
 
 # Install core components
 /vagrant/sh/core.sh
@@ -29,12 +29,6 @@ hostname nodejs-vagrant
 
 # GitHub repositories:
 /vagrant/sh/github.sh
-
-# Travis-CI toolbelt:
-/vagrant/sh/travis.sh
-
-# Heroku toolbelt (NOTE: after Travis-CI due to Ruby removal/reinstall):
-/vagrant/sh/heroku.sh
 
 # Vim settings:
 /vagrant/sh/vim.sh
